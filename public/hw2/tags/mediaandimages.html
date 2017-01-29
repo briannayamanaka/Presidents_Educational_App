@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Media and Images</title>
+  </head>
+  <body>
+    <h1>Testing tags that have to do with media and images</h1>
+    
+    <button>click here to submit</button>
+    
+    <canvas id="coolCanvas"></canvas>
+	<script>
+	var canvas = document.getElementById("coolCanvas");
+	var ctx = canvas.getContext("2d");
+	ctx.fillStyle = "#60B4DA";
+	ctx.fillRect(0, 10, 100, 100);
+	</script>
+	
+	<p>Click on ya boi steve:</p>
+	<img src="steve.gif" width="200" height="150" alt="Steve"
+	usemap="#stevemap">
+
+	<map name="stevemap">
+		<area shape="rect" coords="50,0,110,140" href="surprisesteve.jpg" alt="steve">
+		</map>
+    
+  </body>
+</html>
