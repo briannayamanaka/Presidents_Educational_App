@@ -6,9 +6,11 @@
   </head>
   <body>
     <h1>Testing tags that have to do with media and images</h1>
-    
+
     <button>click here to submit</button>
     
+    <p> check out this blue canvas: </p>
+
     <canvas id="coolCanvas"></canvas>
 	<script>
 	var canvas = document.getElementById("coolCanvas");
@@ -16,7 +18,7 @@
 	ctx.fillStyle = "#60B4DA";
 	ctx.fillRect(0, 10, 100, 100);
 	</script>
-	
+
 	<p>Click on ya boi steve:</p>
 	<img src="steve.gif" width="200" height="150" alt="Steve"
 	usemap="#stevemap">
@@ -26,10 +28,29 @@
 		</map>
 		
 			<p> click play on audio player </p>
-	
 	<audio controls>
 		<source src="skadoo.mp3" type="audio/mpeg">
 	</audio>
+	
+<p>click play on video player:</p>
+<video width="320" height="240" controls>
+  <source src="steve_video.mp4" type="video/mp4">
+</video>
+<br>
+
+<p> check out this embedded gif of steve</p>
+<embed src="sillysteve_embed.gif" width="150" height="100" />
+
+
+<h3> an example of a figure and its figcaption: </h3>
+<p>The thinking chair is a famous prop used on set of the children's show Blues Clues. It has been known to mysteriously bestow advanced problem solving abilities upon its users.</p>
+<figure>
+  <img src="thinkingchair.jpg" alt="The Thinking Chair" width="250" height="228">
+  <figcaption>Fig.1 - The Thinking Chair.</figcaption>
+</figure>
+
+
+    
     
   </body>
 </html>
