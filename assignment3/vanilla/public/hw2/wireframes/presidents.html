@@ -1,113 +1,402 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>President's Page</title>
-    </head>
-    <body>
-        <h2>United States Presidents</h2>
-        <ul>
-            <li>
-                <a href="presidents.html">Presidents</a>
-            </li>
-            <li>
-                <a href="timeline.html">Timeline</a>
-            </li>            <li>
-                <a href="gallery.html">Gallery</a>
-            </li>            
-            <li>
-                <a href="favorites.html">My Favorites</a>
-            </li>
-        </ul>
-        <br>
-        <h2> All U.S. Presidents </h2>
+<head>
+    <meta charset="UTF-8">
+    <title>President's Page</title>
+    <style>
+        *{
+            font-family: "Book Antiqua";
+        }
 
-        <dl>
-                <dt><a href="presidentprofiles/johnadams.html">John Adams</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/johnquincyadams.html">John Quincy Adams</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/alanchesterarthur.html">Alan Chester Arthur</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/jamesbuchanan.html">James Buchanan</a><dt>
-                <dd>Vice President:<dd>                
-                <dt><a href="presidentprofiles/georgebush.html">George Bush</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/georgewbush.html">George W. Bush</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/jimmycarter.html">Jimmy Carter</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/grovercleveland.html">Grover Cleveland</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/billclinton.html">Bill Clinton</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/calvincoolidge.html">Calvin Coolidge</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/dwightdeisenhower.html">Dwight D. Eisenhower</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/millardfillmore.html">Millard Fillmore</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/geraldrford.html">Gerald R. Ford</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/jamesagarfield.html">James A. Garfield</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/ulyssessgrant.html">Ulysses S. Grant</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/warrengharding.html">Warren G. Harding</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/benjaminharrison.html">Benjamin Harrison</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/williamhenryharrison.html">William Henry Harrison</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/birchardrutherfordhayes.html">Birchard Rutherford Hayes</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/herberthoover.html">Herbert Hoover</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/andrewjackson.html">Andrew Jackson</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/thomasjefferson.html">Thomas Jefferson</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/andrewjohnson.html">Andrew Johnson</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/lyndonbjohnson.html">Lyndon B. Johnson</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/johnfkennedy.html">John F. Kennedy</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/abrahamlincoln.html">Abraham Lincoln</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/jamesmonroe.html">James Monroe</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/richardmnixon.html">Richard M. Nixon</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/barackobama.html">Barack Obama</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/franklinpierce.html">Franklin Pierce</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/jameskpolk.html">James K. Polk</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/ronaldreagan.html">Ronald Reagan</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/franklindroosevelt.html">Franklin D. Roosevelt</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/theodoreroosevelt.html">Theodore Roosevelt</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/williamhtaft.html">William H. Taft</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/zacharytaylor.html">Zachary Taylor</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/harrystruman.html">Harry S. Truman</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/donaldjtrump.html">Donald J. Trump</a><dt>
-				<dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/johntyler.html">John Tyler</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/martinvanburen.html">Martin Van Buren</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/georgewashington.html">George Washington</a><dt>
-                <dd>Vice President:<dd>
-                <dt><a href="presidentprofiles/woodrowwilson.html">Woodrow Wilson</a><dt>
-                <dd>Vice President:<dd>
-        </dl>
-    </body>
+        img{
+            border-radius: 50%;
+            padding: 5px;
+            margin-top: 30px;
+        }
+
+        #presidentContainer img{
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+            transition: all 0.5s ease-in-out;
+        }
+
+
+        #presidentContainer img:hover{
+            transform: scale(1.06, 1.06);
+        }
+
+        #presidentContainer{
+            align-content: center;
+            text-align: center;
+        }
+        .presidents{
+            display:inline-block;
+            margin-right: 20px;
+        }
+
+        h1{
+            margin: 0;
+            padding: 0;
+            color: indigo;
+        }
+
+        body{
+            margin: 0;
+            background-color: whitesmoke;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            width: 25%;
+            background-color: mistyrose;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+
+        h2{
+            margin: 10%;
+            padding: 0;
+            font-size: 200%;
+        }
+
+        li a {
+            display: block;
+            line-height:50px;
+            color: #000;
+            text-decoration: none;
+            padding-left: 10%;
+        }
+
+        li a:hover:not(.active) {
+            background-color: palevioletred;
+            color: white;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<ul>
+    <h2>United States Presidents</h2>
+    <li><a href="welcome.html">Welcome</a></li>
+    <li><a href="presidents.html">Presidents</a></li>
+    <li><a href="timeline.html">Timeline</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="favorites.html">My Favorites</a></li>
+</ul>
+<br>
+
+<div id = outermostContainer style="margin-left:30%;padding:16px; height:1000px;margin-right:10%">
+    <h1> All U.S. Presidents </h1>
+    <hr>
+    <br>
+    <div id = presidentContainer style="margin-left:0;">
+
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/johnadams.html">
+                <img src="pres_images/johnadams.jpg" alt="John Adams" width="200" height="200">
+            </a>
+            <p class="names">John Adams</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/johnquincyadams.html">
+                <img src="pres_images/johnquincyadams.jpg" alt="John Quincy Adams" width="200" height="200">
+            </a>
+            <p class="names">John Quincy Adams</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/alanchesterarthur.html">
+                <img src="pres_images/alanchesterarthur.jpg" alt="Alan Chester Arthur" width="200" height="200">
+            </a>
+            <p class="names">Alan Chester Arthur</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/jamesbuchanan.html">
+                <img src="pres_images/jamesbuchanan.jpg" alt="James Buchanan" width="200" height="200">
+            </a>
+            <p class="names">James Buchanan</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/georgebush.html">
+                <img src="pres_images/georgebush.jpg" alt="Geroge Bush" width="200" height="200">
+            </a>
+            <p class="names">George Bush</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/georgewbush.html">
+                <img src="pres_images/georgewbush.jpeg" alt="" width="200" height="200">
+            </a>
+            <p class="names">George W. Bush</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/jimmycarter.html">
+            <img src="pres_images/jimmycarter.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Jimmy Carter</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/grovercleveland.html">
+            <img src="pres_images/grovercleveland.png" alt="" width="200" height="200">
+            </a>
+            <p class="names">Grover Cleveland</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/billclinton.html">
+            <img src="pres_images/billclinton.jpeg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Bill Clinton</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/calvincoolidge.html">
+            <img src="pres_images/calvincoolidge.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Calvin Coolidge</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/dwightdeisenhower.html">
+            <img src="pres_images/dwightdeisenhower.png" alt="" width="200" height="200">
+            </a>
+            <p class="names">Dwight D. Eisenhower</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/millardfillmore.html">
+            <img src="pres_images/millardfillmore.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Millard Fillmore</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/geraldrford.html">
+            <img src="pres_images/geraldrford.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Gerald R. Ford</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/jamesagarfield.html">
+            <img src="pres_images/jamesagarfield.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">James A. Garfield</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/ulyssessgrant.html">
+            <img src="pres_images/ulyssessgrant.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Ulysses S. Grant</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/warrengharding.html">
+            <img src="pres_images/warrengharding.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Warren G. Harding</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/benjaminharrison.html">
+            <img src="pres_images/benjaminharrison.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Benjamin Harrison</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/williamhenryharrison.html">
+            <img src="pres_images/williamhenryharrison.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">William Henry Harrison</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/birchardrutherfordhayes.html">
+            <img src="pres_images/rutherfordbirchardhayes.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Rutherford Birchard Hayes</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/herberthoover.html">
+            <img src="pres_images/herberthoover.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Herbert Hoover</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/andrewjackson.html">
+            <img src="pres_images/andrewjackson.jpeg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Andrew Jackson</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/thomasjefferson.html">
+            <img src="pres_images/thomasjefferson.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Thomas Jefferson</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/andrewjohnson.html">
+            <img src="pres_images/andrewjohnson.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Andrew Johnson</p>
+        </div>
+
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/lyndonbjohnson.html">
+                <img src="pres_images/lyndonbjohnson.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Lyndon B. Johnson</p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/johnfkennedy.html">
+                <img src="pres_images/johnfkennedy.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">John F. Kennedy</p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/abrahamlincoln.html">
+                <img src="pres_images/abrahamlincoln.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Abraham Lincoln</p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/jamesmonroe.html">
+                <img src="pres_images/jamesmonroe.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">James Monroe</p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/richardmnixon.html">
+                <img src="pres_images/richardnixon.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Richard M. Nixon</p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/barackobama.html">
+                <img src="pres_images/barackobama.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Barack Obama</p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/franklinpierce.html">
+                <img src="pres_images/franklinpierce.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Franklin Pierce</p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/jameskpolk.html">
+                <img src="pres_images/jameskpolk.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">James K. Polk</p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/ronaldreagan.html">
+                <img src="pres_images/ronaldreagan.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Ronald Reagan</p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/franklindroosevelt.html">
+                <img src="pres_images/franklindroosevelt.jpeg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Franklin D. Roosevelt</p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/">
+                <img src="pres_images/" alt="" width="200" height="200">
+            </a>
+            <p class="names"></p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/">
+                <img src="pres_images/" alt="" width="200" height="200">
+            </a>
+            <p class="names"></p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/">
+                <img src="pres_images/" alt="" width="200" height="200">
+            </a>
+            <p class="names"></p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/">
+                <img src="pres_images/" alt="" width="200" height="200">
+            </a>
+            <p class="names"></p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/">
+                <img src="pres_images/" alt="" width="200" height="200">
+            </a>
+            <p class="names"></p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/">
+                <img src="pres_images/" alt="" width="200" height="200">
+            </a>
+            <p class="names"></p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/">
+                <img src="pres_images/" alt="" width="200" height="200">
+            </a>
+            <p class="names"></p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/">
+                <img src="pres_images/" alt="" width="200" height="200">
+            </a>
+            <p class="names"></p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/">
+                <img src="pres_images/" alt="" width="200" height="200">
+            </a>
+            <p class="names"></p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/">
+                <img src="pres_images/" alt="" width="200" height="200">
+            </a>
+            <p class="names"></p>
+        </div>
+        <div class="presidents">
+            <a target="_blank" href="presidentprofiles/">
+                <img src="pres_images/" alt="" width="200" height="200">
+            </a>
+            <p class="names"></p>
+        </div>
+    </div>
+
+    <div class="presidents">
+        <a target="_blank" href="presidentprofiles/georgewashington.html">
+            <img src="pres_images/georgewashington.jpg" alt="George Washington" width="200" height="200">
+        </a>
+        <p class="names">George Washington</p>
+    </div>
+</div>
+
+
+
+
+
+
+</body>
 </html>
 
