@@ -1,48 +1,82 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Timeline Page</title>
-    </head>
-    <body>
-        <h2>United States Presidents</h2>
-        <ul>
-            <li><a href="presidents.html">Presidents</a></li>
-            <li><a href="timeline.html">Timeline</a></li>            
-            <li><a href="gallery.html">Gallery</a></li>            
-            <li><a href="favorites.html">My Favorites</a></li>
-        </ul>
-        <h1>A Timeline of U.S. Presidents</h1>
-        <table class="presidentContainer">
-            <tr>
-                <td>
-                    <a href=""><img width="200" src="../images/KevinProfilepic.jpg" alt="../images/defaultpic.jpg"></a>
-                </td>
-                <td>            
-                    <p class="presidentName">George Washington</p>
-                    <p class="presidentTerm">1789-1797</p>
-                </td>
-            </tr>            
-            <tr>
-                <td>
-                    <a href=""><img width="200" src="../images/KevinProfilepic.jpg" alt="../images/defaultpic.jpg"></a>
-                </td>
-                <td>            
-                    <p class="presidentName">John Adams</p>
-                    <p class="presidentTerm">1797-1801</p>
-                </td>
-            </tr>             
-            <tr>
-                <td>
-                    <a href=""><img width="200" src="../images/KevinProfilepic.jpg" alt="../images/defaultpic.jpg"></a>
-                </td>
-                <td>            
-                    <p class="presidentName">Thomas Jefferson</p>
-                    <p class="presidentTerm">1801-1809</p>
-                </td>
-            </tr>            
-        </table>
+<head>
+    <meta charset="UTF-8">
+    <title>Timeline Page</title>
+    <style>
+        #outermostContainer{
+            margin-left:30%;
+            padding:16px;
+            height:1000px;
+            margin-right:10%;
+        }
 
-        
-    </body>
+        *{
+            font-family: "Book Antiqua";
+        }
+
+        h1{
+            margin: 0;
+            padding: 0;
+            color: indigo;
+        }
+
+        body{
+            margin: 0;
+            background-color: whitesmoke;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            width: 25%;
+            background-color: mistyrose;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+
+        h2{
+            margin: 10%;
+            padding: 0;
+            font-size: 200%;
+        }
+
+        li a {
+            display: block;
+            line-height:50px;
+            color: #000;
+            text-decoration: none;
+            padding-left: 10%;
+        }
+
+        li a:hover:not(.active) {
+            background-color: palevioletred;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<ul>
+    <h2>United States Presidents</h2>
+    <li><a href="welcome.html">Welcome</a></li>
+    <li><a href="presidents.html">Presidents</a></li>
+    <li><a href="timeline.html">Timeline</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="favorites.html">My Favorites</a></li>
+</ul>
+<br>
+
+<div id = "outermostContainer">
+    <h1> U.S. Presidents Timeline </h1>
+    <hr>
+    <br>
+
+
+
+
+</div>
+</body>
 </html>
+
