@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,5 +16,66 @@
                 <a href="">Click Here.</a>
             </p>
         </form>
+    </body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+        <title>President's Page</title>
+    </head>
+    <style>
+        
+        html, body{
+            text-align: center;
+            font-family: Avenir;
+            color: white;
+            background-color: rgb(61, 79, 93);
+
+        }
+        #test{
+            border-radius: 2px;
+            border:2px solid rgba(255,255,255,0.4);
+            position: absolute;
+            width: 500px;
+            height: 400px;
+            top:0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+        .center{
+            margin-left: 150px;
+        }
+        fieldset *{
+            padding: 5px;
+        }
+        h1{
+            color:white;
+        }
+        button{
+            margin-top: 10px;
+
+        }
+    </style>
+    <body>
+        <div id="test">
+            <form class="pure-form pure-form-stacked">
+                <fieldset>
+                    <h1>Thanks for signing up!</h1>
+                    <h2>Login with your new credentials</h2>
+                    <div class="center pure-input-1-3"><input id="email" type="text" placeholder="Username"></div>
+                    <div class="center pure-input-1-3"><input id="password" type="password" placeholder="Password"></div>
+                    <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+                    <p>Forgot your password?
+                        <a href="">Click Here.</a>
+                    </p>
+                </fieldset>
+            </form>
+        </div>
     </body>
 </html>

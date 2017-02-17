@@ -2,17 +2,54 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
         <title>President's Page</title>
     </head>
+    <style>
+        
+        html, body{
+            text-align: center;
+            font-family: Avenir;
+            color: white;
+            background-color: rgb(61, 79, 93);
+
+        }
+        #test{
+            border-radius: 2px;
+            border:2px solid rgba(255,255,255,0.4);
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            top:0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+        .center{
+            margin-left: 150px;
+        }
+        fieldset *{
+            padding: 5px;
+        }
+        h1{
+            color:white;
+        }
+        button{
+            margin-top: 10px;
+
+        }
+    </style>
     <body>
-        <h1>Login to your account</h1>
-        <form action="welcome.html">
-            <input type="text" name="username" value="Username"><br>
-            <input type="text" name="password" value="Password"><br>
-            <input type="submit" value="Login">
-            <p>Don't have an account?
-                <a href="signup.html">Sign Up.</a>
-            </p>
-        </form>
+        <div id="test">
+            <form class="pure-form pure-form-stacked">
+                <fieldset>
+                    <h1 >Login to your account</h1>
+                    <div class="center pure-input-1-3"><input id="email" type="text" placeholder="Username"></div>
+                    <div class="center pure-input-1-3"><input id="password" type="password" placeholder="Password"></div>
+                    <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+                </fieldset>
+            </form>
+        </div>
     </body>
 </html>
