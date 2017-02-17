@@ -103,7 +103,11 @@
         {
             display: inline-block;
         }
-        .timeline-entry, .timeline-entry-event
+        .timeline-entry-event, .timeline-entry-event > *
+        {
+            display: inline-block;
+        }
+        .timeline-entry
         {
             position: relative;
             height: 100%;
@@ -114,9 +118,15 @@
         }
         .timeline-entry-event
         {
+            position: relative;
+            height: 100%;
+            /*timeline entry color*/
             background-color: gold;
+            padding: 5px;
+            border-radius: 10px;
         }
-        .timeline-left .timeline-entry::after, .timeline-right .timeline-entry::before
+
+        .timeline-left .timeline-entry::after, .timeline-right .timeline-entry::before,  .timeline-left .timeline-entry-event::after, .timeline-right .timeline-entry-event::before
         {
             content: ' ';
             position: absolute;
@@ -129,13 +139,13 @@
             border-width: 10px;
         }
         /*left side arrows */
-        .timeline-left .timeline-entry::after
+        .timeline-left .timeline-entry::after, .timeline-left .timeline-entry-event::after
         {
             left: 100%;
             border-left-color: indigo;
         }
         /*right side arrows*/
-        .timeline-right .timeline-entry::before
+        .timeline-right .timeline-entry::before, .timeline-right .timeline-entry-event::before
         {
             left: -20px;
             border-right-color:indigo;
@@ -205,23 +215,28 @@
             {
                 margin-left: 0px;
             }
-            .timeline-entry
+            .timeline-entry, .timeline-entry-event
             {
                 text-align: center;
             }
             .timeline-right .timeline-entry::before,
-            .timeline-left .timeline-entry::after
+            .timeline-left .timeline-entry::after,
+            .timeline-right .timeline-entry-event::before,
+            .timeline-left .timeline-entry-event::after
             {
                 top: -20px;
                 left: calc(50% - 7px);
                 border-color:transparent;
                 border-bottom-color: blue;
             }
-            .timeline-entry .timeline-title
+            .timeline-entry .timeline-title,
+            .timeline-entry-event .timeline-title
             {
                 display: block;
             }
             .timeline-entry .timeline-date::after
+            .timeline-entry-event .timeline-date::after
+
             {
                 display: none;
             }
