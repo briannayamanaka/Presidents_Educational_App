@@ -1,13 +1,144 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Gerald R. Ford</title>
-  </head>
-  <body>
-    <h1>Gerald R. Ford</h1>
-    <img src="presidentprofiledummypic.png" alt="face" height="100" width="175">
-    <br>
-    <h2>1974-1977</h2>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1974-1977</title>
+  <style>
+    .checkbox {
+      display: none;
+    }
+    .label {
+      /*margin-left: 10%;*/
+      display: inline-block;
+      width: 55px;
+      height: 55px;
+      background: url(../pres_images/fav_before.png);
+      background-repeat: no-repeat;
+      margin-left:1%;
+    }
+    .checkbox:checked + .label {
+      background: url(../pres_images/fav_after.png);
+      background-repeat: no-repeat;
+
+    }
+    #outermostContainer{
+      margin-left:30%;
+      padding:16px;
+      height:1000px;
+      margin-right:10%;
+    }
+
+    *{
+      font-family: "Book Antiqua";
+    }
+
+    #outermostContainer h1{
+      margin: 0;
+      padding: 0;
+      color: indigo;
+    }
+
+    body{
+      margin: 0;
+      background-color: whitesmoke;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      width: 25%;
+      background-color: mistyrose;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+    }
+
+    h2{
+      margin: 10%;
+      padding: 0;
+      font-size: 200%;
+    }
+
+    li a {
+      display: block;
+      line-height:50px;
+      color: #000;
+      text-decoration: none;
+      padding-left: 10%;
+    }
+
+    li a:hover:not(.active) {
+      background-color: palevioletred;
+      color: white;
+    }
+    .presidency_date p{
+      font-weight: 400;
+    }
+    .president_image img{
+      transition: all 0.5s ease-in-out;
+      width: 30%;
+      height: 30%;
+      margin-left: 30%;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      border: 100px white;
+      box-shadow: 0px 0px 10px 0px rgba(0,0,5,0.3);
+      padding: 10px;
+
+    }
+    .paragraph_header p{
+      font-weight: 400;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+<ul>
+  <h2>United States Presidents</h2>
+  <li><a href="../welcome.html">Welcome</a></li>
+  <li><a href="../presidents.html">Presidents</a></li>
+  <li><a href="../timeline.html">Timeline</a></li>
+  <li><a href="../gallery.html">Gallery</a></li>
+  <li><a href="../favorites.html">My Favorites</a></li>
+</ul>
+<br>
+
+<div id = "outermostContainer">
+
+  <h1>Gerald Ford</h1>
+
+  <hr>
+  <h3>1974-1977</h3>
+  <input type="checkbox" class="checkbox" id="checked">
+  <label class="label" for="checked"></label>
+  <br>
+
+
+
+
+  <div class="president_image">
+
+    <img src="../pres_images/geraldrford.jpg">
+  </div>
+
+
+  <div class="biography">
+    <div class = "paragraph_header"> <p> Biography:</p></div>
+    <div class = "paragraph_body">
+      <p> /*TODO*/
+      </p>
+    </div>
+  </div>
+
+  <div class="info">
+    <div class = "paragraph_header"><p>Info:</p></div>
+
+    <div class = "paragraph_body">
+      <p> /*TODO*/
+      </p>
+    </div>
+  </div>
+</div>
+</body>
 </html>
+
