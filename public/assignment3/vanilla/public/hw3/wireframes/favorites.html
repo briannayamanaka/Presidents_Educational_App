@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Favorites Page</title>
+    <title>President's Page</title>
     <style type="text/css">
         #outermostContainer {
             margin-left: 30%;
@@ -13,6 +13,31 @@
 
         * {
             font-family: "Book Antiqua";
+        }
+
+        img {
+            border-radius: 50%;
+            padding: 5px;
+            margin-top: 30px;
+        }
+
+        #presidentContainer img {
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease-in-out;
+        }
+
+        #presidentContainer img:hover {
+            transform: scale(1.06, 1.06);
+        }
+
+        #presidentContainer {
+            align-content: center;
+            text-align: center;
+        }
+
+        .presidents {
+            display: inline-block;
+            margin-right: 20px;
         }
 
         h1 {
@@ -55,6 +80,7 @@
             color: white;
         }
 
+
     </style>
 </head>
 <body>
@@ -69,10 +95,55 @@
 <br>
 
 <div id="outermostContainer">
-    <h1> My Favorites </h1>
+    <h1> All U.S. Presidents </h1>
     <hr>
     <br>
+    <div id=presidentContainer style="margin-left:0;">
+        <div class="presidents">
+            <a href="presidentprofiles/johnadams.html">
+                <img src="pres_images/johnadams.jpg" alt="John Adams" width="200" height="200">
+            </a>
+            <p class="names">John Adams</p>
+        </div>
+        <div class="presidents">
+            <a href="presidentprofiles/jamesbuchanan.html">
+                <img src="pres_images/jamesbuchanan.jpg" alt="James Buchanan" width="200" height="200">
+            </a>
+            <p class="names">James Buchanan</p>
+        </div>
+        <div class="presidents">
+            <a href="presidentprofiles/billclinton.html">
+                <img src="pres_images/billclinton.jpeg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Bill Clinton</p>
+        </div>
 
+        <div class="presidents">
+            <a href="presidentprofiles/calvincoolidge.html">
+                <img src="pres_images/calvincoolidge.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Calvin Coolidge</p>
+        </div>
+        <div class="presidents">
+            <a href="presidentprofiles/jamesagarfield.html">
+                <img src="pres_images/jamesagarfield.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">James A. Garfield</p>
+        </div>
+        <div class="presidents">
+            <a href="presidentprofiles/herberthoover.html">
+                <img src="pres_images/herberthoover.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Herbert Hoover</p>
+        </div>
+        <div class="presidents">
+            <a href="presidentprofiles/lyndonbjohnson.html">
+                <img src="pres_images/lyndonbjohnson.jpg" alt="" width="200" height="200">
+            </a>
+            <p class="names">Lyndon B. Johnson</p>
+        </div>
+
+    </div>
 </div>
 </body>
 </html>
