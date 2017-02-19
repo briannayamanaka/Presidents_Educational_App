@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timeline Page</title>
+    <style type="text/css">
+        #outermostContainer {
+            margin-left: 30%;
+            padding: 16px;
+            height: 1000px;
+            margin-right: 10%;
+        }
+
+        * {
+            font-family: "Book Antiqua";
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            color: indigo;
+        }
+
+        body {
+            margin: 0;
+            background-color: whitesmoke;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            width: 25%;
+            background-color: mistyrose;
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+        }
+
+        h2 {
+            margin: 10%;
+            padding: 0;
+            font-size: 200%;
+        }
+
+        li a {
+            display: block;
+            line-height: 50px;
+            color: #000;
+            text-decoration: none;
+            padding-left: 10%;
+        }
+
+        li a:hover:not(.active) {
+            background-color: palevioletred;
+            color: white;
+        }
+
+        /* start css paste code here */
+        body {
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        ol.timeline {
+            position: relative;
+            width: 100%;
+            list-style: none;
+            margin: 0;
+            padding: 0 20px;
+        }
+
+        /*time line center line*/
+        ol.timeline::before {
+            content: ' ';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(80, 80, 80, 0) 0, #505050 8%, #505050 92%, rgba(80, 80, 80, 0) 100%);
+        }
+
+        ol.timeline li {
+            display: block;
+            width: calc(50% - 20px);
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        ol.timeline li.timeline-right {
+            margin-left: calc(50% + 25px);
+        }
+
+        ol.timeline li.timeline-left {
+            text-align: right;
+        }
+
+        .timeline-entry, .timeline-entry > * {
+            display: inline-block;
+        }
+
+        .timeline-entry-event, .timeline-entry-event > * {
+            display: inline-block;
+        }
+
+        .timeline-entry {
+            position: relative;
+            height: 100%;
+            /*timeline entry color*/
+            background: #d5c9ee;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .timeline-entry-event {
+            position: relative;
+            height: 100%;
+            /*timeline entry color*/
+            background-color: gold;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .timeline-left .timeline-entry::after, .timeline-right .timeline-entry::before, .timeline-left .timeline-entry-event::after, .timeline-right .timeline-entry-event::before {
+            content: ' ';
+            position: absolute;
+            top: 10px;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            pointer-events: none;
+            border: 10px solid transparent;
+        }
+
+        /*left side arrows */
+        .timeline-left .timeline-entry::after, .timeline-left .timeline-entry-event::after {
+            left: 100%;
+            border-left-color: indigo;
+        }
+
+        /*right side arrows*/
+        .timeline-right .timeline-entry::before, .timeline-right .timeline-entry-event::before {
+            left: -20px;
+            border-right-color: indigo;
+        }
+
+        .timeline-title {
+            padding: 0;
+            margin: 0;
+            font-size: 25px;
+            /*president name/event title */
+            font-weight: bold;
+        }
+
+        /*circles*/
+        .timeline-left .timeline-date::after, .timeline-title::before {
+            content: '';
+            position: relative;
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            /* circle inner color */
+            background: tomato;
+            /* circle border size and color */
+            border: 4px solid tomato;
+            border-radius: 50%;
+        }
+
+        .timeline-title::before {
+            left: -37px;
+            margin-right: -20px;
+        }
+
+        .timeline-left .timeline-title::before {
+            display: none;
+        }
+
+        .timeline-left .timeline-date::after {
+            right: -37px;
+            margin-left: -20px;
+        }
+
+        .timeline-date {
+            font-size: 15px;
+            margin-left: 10px;
+        }
+
+        .timeline-desc {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .timeline-desc img {
+            width: calc(100% - 20px);
+            height: auto;
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width: 850px) {
+            ol.timeline li {
+                width: 100%;
+                padding-top: 100px;
+            }
+
+            ol.timeline li.timeline-right {
+                margin-left: 0;
+            }
+
+            .timeline-entry, .timeline-entry-event {
+                text-align: center;
+            }
+
+            .timeline-right .timeline-entry::before,
+            .timeline-left .timeline-entry::after,
+            .timeline-right .timeline-entry-event::before,
+            .timeline-left .timeline-entry-event::after {
+                top: -20px;
+                left: calc(50% - 7px);
+                border-color: transparent;
+                border-bottom-color: blue;
+            }
+
+            .timeline-entry .timeline-title,
+            .timeline-entry-event .timeline-title {
+                display: block;
+            }
+
+            .timeline-entry .timeline-date::after,
+            .timeline-entry-event .timeline-date::after {
+                display: none;
+            }
+
+            .timeline-left .timeline-title::before {
+                display: inline-block;
+            }
+
+            .timeline-title {
+                position: relative;
+            }
+
+            .timeline-title::before {
+                position: absolute;
+                left: calc(50% - 7px);
+                top: -40px;
+            }
+        }
+
+        /* end css paste code here */
+
+    </style>
+</head>
+<body>
+<ul>
+    <h2>United States Presidents</h2>
+    <li><a href="welcome.html">Welcome</a></li>
+    <li><a href="presidents.html">Presidents</a></li>
+    <li><a href="timeline.html">Timeline</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="favorites.html">My Favorites</a></li>
+</ul>
+<br>
+
+<div id="outermostContainer">
+    <h1> U.S. Presidents Timeline </h1>
+    <hr>
+    <br>
+
+    <ol class="timeline">
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">Donald Trump</div>
+                <div class="timeline-date">2017-Present</div>
+                <div class="timeline-desc">Donald trump begins his presidency in early 2017. His first few weeks as
+                    president bring about many protests and rallies across the country, regarding his twelve executive
+                    orders placed within his first month in office.
+                </div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">Barack Obama</div>
+                <div class="timeline-date">2009-2017</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry-event">
+                <div class="timeline-title">Obama's executive orders</div>
+                <div class="timeline-date">2009</div>
+                <div class="timeline-desc">President Obama signed executive orders closing all secret prisons and
+                    detention camps run by the CIA, including the infamous Guantanamo Bay prison in Cuba. He also banned
+                    coercive interrogation methods.
+                </div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">George W. Bush</div>
+                <div class="timeline-date">2001-2009</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">Bill Clinton</div>
+                <div class="timeline-date">1993-2001</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">George H. W. Bush</div>
+                <div class="timeline-date">1989-1993</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry-event">
+                <div class="timeline-title">1993 Missile Attack</div>
+                <div class="timeline-date">1993</div>
+                <div class="timeline-desc">The American missile attack on Iraq was meant to retaliate for an Iraqi plot
+                    to assassinate George H.W. Bush during the former president’s visit to Kuwait.
+                </div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">Ronald Reagan</div>
+                <div class="timeline-date">1981-1989</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry-event">
+                <div class="timeline-title">New Federal Holiday</div>
+                <div class="timeline-date">1986</div>
+                <div class="timeline-desc"> Martin Luther King Day is officially observed for the first time as a
+                    federal holiday in the United States.
+                </div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">Jimmy Carter</div>
+                <div class="timeline-date">1977-1981</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">Gerald Ford</div>
+                <div class="timeline-date">1974-1977</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">Richard Nixon</div>
+                <div class="timeline-date">1969-1974</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">Lyndon B. Johnson</div>
+                <div class="timeline-date">1963-1969</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">John F. Kennedy</div>
+                <div class="timeline-date">1961-1963</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry-event">
+                <div class="timeline-title">Eisenhower enforces integration</div>
+                <div class="timeline-date">1957</div>
+                <div class="timeline-desc">Dwight D. Eisenhower sends federal troops to Central High School in Little
+                    Rock, Arkansas, to enforce integration of African-descent students.
+                </div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">Dwight D. Eisenhower</div>
+                <div class="timeline-date">1953-1961</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry-event">
+                <div class="timeline-title">World War II</div>
+                <div class="timeline-date">1939-1945</div>
+                <div class="timeline-desc">In response to the Japanese attack on Pearl Harbor in 1941, the United States
+                    joined the Allied Powers (Britain, France, Russia and China) and fought against (Germany, Italy and
+                    Japan).
+                </div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">Harry S. Truman</div>
+                <div class="timeline-date">1945-1953</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">Franklin D. Roosevelt</div>
+                <div class="timeline-date">1933-1945</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry-event">
+                <div class="timeline-title">National Anthem</div>
+                <div class="timeline-date">1931</div>
+                <div class="timeline-desc">The Star-Spangled Banner is adopted as the national anthem of the U.S.</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">Herbert Hoover</div>
+                <div class="timeline-date">1929-1933</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">Calvin Coolidge</div>
+                <div class="timeline-date">1872-1933</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">Warren G. Harding</div>
+                <div class="timeline-date">1921-1923</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry-event">
+                <div class="timeline-title">World War I</div>
+                <div class="timeline-date">1914-1918</div>
+                <div class="timeline-desc">In 1917, the U.S. entered World War I by declaring war on Germany</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">Woodrow Wilson</div>
+                <div class="timeline-date">1913-1921</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">William Howard Taft</div>
+                <div class="timeline-date">1909-1913</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry-event">
+                <div class="timeline-title">Bureau of Investigation</div>
+                <div class="timeline-date">1908</div>
+                <div class="timeline-desc">Eventually known as the FBI, the bureau was a division of the U.S. Dept. of
+                    Justice that handled investigating all violations of federal laws.
+                </div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">Theodore Roosevelt</div>
+                <div class="timeline-date">1901-1909</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">William McKinley</div>
+                <div class="timeline-date">1897-1901</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">Glover Cleveland</div>
+                <div class="timeline-date">1893-1897</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">Benjamin Harrison</div>
+                <div class="timeline-date">1889-1893</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">Grover Cleveland</div>
+                <div class="timeline-date">1885-1889</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry-event">
+                <div class="timeline-title">Battle of Wounded Knee</div>
+                <div class="timeline-date">1890</div>
+                <div class="timeline-desc">The last major battle between United States troops and Indians in the fight
+                    for American expansion and dominance.
+                </div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">Chester A. Arthur</div>
+                <div class="timeline-date">1881-1885</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry-event">
+                <div class="timeline-title">Segregation</div>
+                <div class="timeline-date">1883</div>
+                <div class="timeline-desc">Racial segregation is legalized based on a decision made in the Civil Rights
+                    Cases.
+                </div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">James A. Garfield</div>
+                <div class="timeline-date">1881-1881</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">Rutherford B. Hayes</div>
+                <div class="timeline-date">1877-1881</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">Ulysses S. Grant</div>
+                <div class="timeline-date">1869-1877</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">Andrew Johnson</div>
+                <div class="timeline-date">1865-1869</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">Abraham Linicoln</div>
+                <div class="timeline-date">1861-1865</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry-event">
+                <div class="timeline-title">Civil War</div>
+                <div class="timeline-date">1861-1865</div>
+                <div class="timeline-desc"> Conflict between the North (the Union) and the South (the Confederacy) over
+                    the expansion of slavery into western states led to war between the two American sectors. The
+                    Northern states won and the rebellious states returned to "The Union."
+                </div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">James Buchanan</div>
+                <div class="timeline-date">1857-1861</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">Franklin Pierce</div>
+                <div class="timeline-date">1853-1857</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">Millard Fillmore</div>
+                <div class="timeline-date">1850-1853</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">Zachary Taylor</div>
+                <div class="timeline-date">1849-1850</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">James K. Polk</div>
+                <div class="timeline-date">1845-1849</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry-event">
+                <div class="timeline-title">Mexican War</div>
+                <div class="timeline-date">1846-1848</div>
+                <div class="timeline-desc">United States declared war on Mexico to acquire more land and as a result
+                    gained California, Nevada, Utah, New Mexico, Arizona, Colorado, and Wyoming.
+                </div>
+            </div>
+        </li>
+
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">John Tyler</div>
+                <div class="timeline-date">1841-1845</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">William Henry Harrison</div>
+                <div class="timeline-date">1841-1841</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">Martin Van Buren</div>
+                <div class="timeline-date">1837-1841</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">Andrew Jackson</div>
+                <div class="timeline-date">1829-1837</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry-event">
+                <div class="timeline-title">Trail of Tears</div>
+                <div class="timeline-date">1838</div>
+                <div class="timeline-desc">In an effort to acquire more land the United States forced more than 15,000
+                    Cherokee Native Americans to march from Georgia to Indian Territory in present-day Oklahoma.
+                    Approximately 4,000 died from starvation and disease along the “Trail of Tears.”
+                </div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">John Quincy Adams</div>
+                <div class="timeline-date">1825-1829</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">James Monroe</div>
+                <div class="timeline-date">1817-1825</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">James Madison</div>
+                <div class="timeline-date">1809-1817</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry-event">
+                <div class="timeline-title">War of 1812</div>
+                <div class="timeline-date">1812-1814</div>
+                <div class="timeline-desc">America declared war on Britain due to the British restricting U.S. trade and
+                    kidnapping U.S. seamen.
+                </div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">Thomas Jefferson</div>
+                <div class="timeline-date">1801-1809</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry">
+                <div class="timeline-title">John Adams</div>
+                <div class="timeline-date">1797-1801</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry-event">
+                <div class="timeline-title">Capital declared</div>
+                <div class="timeline-date">1800</div>
+                <div class="timeline-desc">The capital of the United States is declared to be Washington, DC</div>
+            </div>
+        </li>
+        <li class="timeline-right">
+            <div class="timeline-entry">
+                <div class="timeline-title">George Washington</div>
+                <div class="timeline-date">1789-1797</div>
+                <div class="timeline-desc">presidency details</div>
+            </div>
+        </li>
+        <li class="timeline-left">
+            <div class="timeline-entry-event">
+                <div class="timeline-title">American Independence</div>
+                <div class="timeline-date">1783</div>
+                <div class="timeline-desc">Following the end of American Revolution, Britain formally recognized the
+                    United States of American as an independent country.
+                </div>
+            </div>
+        </li>
+    </ol>
+</div>
+</body>
+</html>
+
