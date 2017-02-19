@@ -3,25 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Gallery Page</title>
-    <style>
-        #outermostContainer{
-            margin-left:30%;
-            padding:16px;
-            height:1000px;
-            margin-right:10%;
+    <style type="text/css">
+        #outermostContainer {
+            margin-left: 30%;
+            padding: 16px;
+            height: 1000px;
+            margin-right: 10%;
         }
-        *{
+
+        * {
             font-family: "Book Antiqua";
         }
-        h1{
+
+        h1 {
             margin: 0;
             padding: 0;
             color: indigo;
         }
-        body{
+
+        body {
             margin: 0;
             background-color: whitesmoke;
         }
+
         ul {
             margin: 0;
             padding: 0;
@@ -31,23 +35,27 @@
             height: 100%;
             overflow: auto;
         }
-        h2{
+
+        h2 {
             margin: 10%;
             padding: 0;
             font-size: 200%;
         }
+
         li a {
             display: block;
-            line-height:50px;
+            line-height: 50px;
             color: #000;
             text-decoration: none;
             padding-left: 10%;
         }
+
         li a:hover:not(.active) {
             background-color: palevioletred;
             color: white;
         }
-        .slider{
+
+        .slider {
             width: 640px; /*Same as width of the large image*/
             position: relative;
             /*Instead of height we will use padding*/
@@ -56,15 +64,19 @@
             /*Lets add a shadow*/
             box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
         }
+
         /*Last thing remaining is to add transitions*/
-        .slider>img{
+        .slider > img {
             position: absolute;
-            left: 0; top: 0;
+            left: 0;
+            top: 0;
             transition: all 0.5s;
         }
+
         .slider input[name='slide_switch'] {
             display: none;
         }
+
         .slider label {
             /*Lets add some spacing for the thumbnails*/
             margin: 18px 0 0 18px;
@@ -75,24 +87,28 @@
             /*Default style = low opacity*/
             opacity: 0.6;
         }
-        .slider label img{
+
+        .slider label img {
             display: block;
         }
+
         /*Time to add the click effects*/
-        .slider input[name='slide_switch']:checked+label {
+        .slider input[name='slide_switch']:checked + label {
             border-color: #666;
             opacity: 1;
         }
+
         /*Clicking any thumbnail now should change its opacity(style)*/
         /*Time to work on the main images*/
         .slider input[name='slide_switch'] ~ img {
             opacity: 0;
             transform: scale(1.1);
         }
+
         /*That hides all main images at a 110% size
         On click the images will be displayed at normal size to complete the effect
         */
-        .slider input[name='slide_switch']:checked+label+img {
+        .slider input[name='slide_switch']:checked + label + img {
             opacity: 1;
             transform: scale(1);
         }
@@ -109,7 +125,7 @@
 </ul>
 <br>
 
-<div id = "outermostContainer">
+<div id="outermostContainer">
     <h1> U.S. Presidents Gallery </h1>
     <hr>
     <br>
@@ -117,40 +133,40 @@
     <div class="slider">
         <!--FIRST IMAGE checked=default-->
 
-        <input type="radio" name="slide_switch" id="id1"  checked="checked"/>
+        <input type="radio" name="slide_switch" id="id1" checked="checked"/>
 
         <label for="id1">
             <img src="gallery_images/lincolnmemorial.jpg" width="100"/>
         </label>
-        <img src="gallery_images/lincolnmemorial.jpg" width = "640" height = "320"/>
+        <img src="gallery_images/lincolnmemorial.jpg" width="640" height="320"/>
 
         <!--SECOND IMAGE-->
         <input type="radio" name="slide_switch" id="id2"/>
         <label for="id2">
             <img src="gallery_images/mtrushmore.jpeg" width="100"/>
         </label>
-        <img src="gallery_images/mtrushmore.jpeg" width = "640" height = "320"/>
+        <img src="gallery_images/mtrushmore.jpeg" width="640" height="320"/>
 
         <!--THIRD IMAGE-->
         <input type="radio" name="slide_switch" id="id3"/>
         <label for="id3">
             <img src="gallery_images/trump.jpeg" width="100"/>
         </label>
-        <img src="gallery_images/trump.jpeg" width = "640" height = "320"/>
+        <img src="gallery_images/trump.jpeg" width="640" height="320"/>
 
         <!--FOURTH IMAGE-->
         <input type="radio" name="slide_switch" id="id4"/>
         <label for="id4">
             <img src="gallery_images/whitehouse_today.jpeg" width="100"/>
         </label>
-        <img src="gallery_images/whitehouse_today.jpeg" width = "640" height = "320"/>
+        <img src="gallery_images/whitehouse_today.jpeg" width="640" height="320"/>
 
         <!--FIFTH IMAGE-->
         <input type="radio" name="slide_switch" id="id5"/>
         <label for="id5">
             <img src="gallery_images/obama_firstlady.jpeg" width="100"/>
         </label>
-        <img src="gallery_images/obama_firstlady.jpeg" width = "640" height = "320"/>
+        <img src="gallery_images/obama_firstlady.jpeg" width="640" height="320"/>
     </div>
 
 </div>
