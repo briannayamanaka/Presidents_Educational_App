@@ -3,6 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+        <!-- Firebase Stuff -->
+        <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+        <script src="firebase.js"> </script>
+
+
         <title>President's Page</title>
     </head>
     <style>
@@ -28,6 +33,7 @@
         }
         .center{
             margin-left: 150px;
+            color: black;
         }
         fieldset *{
             padding: 5px;
@@ -43,17 +49,17 @@
     </style>
     <body>
         <div id="test">
-            <form class="pure-form pure-form-stacked" action="after_signup.html">
+            <div class="pure-form pure-form-stacked">
                 <fieldset>
                     <h1>Sign up to learn about U.S. Presidencies</h1>
                     <div class="center pure-input-1-3"><input id="email" type="text" placeholder="Username"></div>
                     <div class="center pure-input-1-3"><input id="password" type="password" placeholder="Password"></div>
-                    <button type="submit" class="pure-button pure-button-primary">Sign up</button>
+                    <button id="submit" class="pure-button pure-button-primary">Sign up</button>
                     <p>Already have an account?
                         <a href="login.html">Sign In.</a>
                     </p>
                 </fieldset>
-            </form>
+            </div>
         </div>
     </body>
 </html>
