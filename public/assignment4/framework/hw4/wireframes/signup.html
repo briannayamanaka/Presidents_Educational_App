@@ -24,7 +24,7 @@
             border:2px solid rgba(255,255,255,0.4);
             position: absolute;
             width: 500px;
-            height: 400px;
+            height: 450px;
             top:0;
             bottom: 0;
             right: 0;
@@ -46,6 +46,29 @@
             padding-bottom: 10px;
 
         }
+        #emailPop{
+
+        }
+        #passPop{
+        }
+        .errorPop{
+            position: relative;
+            margin: 0;
+            padding: 0;  
+            color: red; 
+            visibility: hidden;
+            display: none;
+            font-size: 12px;
+            font-style: italic;
+        }
+        #signInLink{
+            color: lightblue;
+            text-decoration: none;
+        }        
+        #signInLink:hover{
+            color: #0078e7;
+            text-decoration: none;
+        }
     </style>
     <body>
         <div id="test">
@@ -53,10 +76,12 @@
                 <fieldset>
                     <h1>Sign up to learn about U.S. Presidencies</h1>
                     <div class="center pure-input-1-3"><input id="email" type="text" placeholder="Username"></div>
+                    <p id="emailPop" class="errorPop">Invalid Email</p>
                     <div class="center pure-input-1-3"><input id="password" type="password" placeholder="Password"></div>
+                    <p id="passPop" class="errorPop">Invalid Password <br>Must be 6 characters or more</p>
                     <button id="submit" class="pure-button pure-button-primary">Sign up</button>
                     <p>Already have an account?
-                        <a href="login.html">Sign In.</a>
+                        <a id="signInLink" href="login.html">Sign In.</a>
                     </p>
                 </fieldset>
             </div>
