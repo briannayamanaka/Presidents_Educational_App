@@ -22,6 +22,7 @@ window.onload = function(){
 	signupBtn.addEventListener('click', e => {
 	    const email = txtEmail.value;
 	    const password = txtPassword.value;
+	    
 	    emailPop.style.visibility = 'hidden';
 		emailPop.style.display = 'none';	    		
 		passPop.style.visibility = 'hidden';
@@ -29,16 +30,13 @@ window.onload = function(){
 
 
 	    if(email == ""){
-	    	console.log("Empty email.");
 	    	emailPop.style.visibility = 'visible';
 	    	emailPop.style.display = 'block';
 	    }
 	   	if(password.length < 6){
-	    	console.log("Empty password.");
 	    	passPop.innerHTML = "Invalid Password <br> Must be 6 characters or more";
 	    	passPop.style.visibility = 'visible';
 	    	passPop.style.display = 'block';
-
 	    }
 
 	    console.log("email: " + email + "\npassword: " + password);
