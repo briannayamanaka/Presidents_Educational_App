@@ -81,7 +81,7 @@
 
         firebase.auth().onAuthStateChanged(function (user) {
             if (user) {
-                var x = document.createTextNode("Welcome, you have successfully logged in as " + user.email);
+                var x = document.createTextNode("You are currently signed in as " + user.email);
                 document.getElementById("welcome-title").appendChild(x);
             } else {
                 console.log("No USER SIGNED IN")
