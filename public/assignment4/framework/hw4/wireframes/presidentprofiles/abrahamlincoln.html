@@ -8,7 +8,16 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
     <link rel="stylesheet" href="../presidents.css">
-c
+    <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+    <script src="../favorites.js"></script>
+    <script>
+        var president_abrahamlincoln=
+            {
+                profile_link:"abrahamlincoln.html",
+                image_source:"abrahamlincoln.jpg",
+                presidentname:"Abraham Lincoln"
+            };
+    </script>
     <style>
         body p {
             font-family: Avenir;
@@ -69,7 +78,7 @@ c
                             <a class="pure-button " href="../favorites.html">My Favorites</a>
                         </li>
                         <li class="nav-item">
-                            <a class="pure-button" href="../signout.html">Sign out <button onclick="signOut()" style="display: none;"> invisible </button></a>
+                            <a class="pure-button" href="../login.html">Sign out <button onclick="signOut()" style="display: none;"> invisible </button></a>
                         </li>
                     </ul>
                 </nav>
@@ -78,7 +87,7 @@ c
         <div class="pure-u-1-8 pure-u-md-1-4"></div>
         <div class="pure-u-3-4">
             <div class="pure-g">
-                <a id="fav" class="pure-u-1 icono-heart"><a>
+
                 <div class="pres-cont pure-u-md-1-3">
                     <img class="pure-img" src="../pres_images/abrahamlincoln.jpg">
                 </div>
@@ -95,7 +104,7 @@ c
                 <div class="pres-cont pure-u-md-1-3">
                     <p class="description">Info: TODO</p>
                 </div>
-                
+                <button onclick="addFavoritePresident(firebase.auth().currentUser.uid,president_abrahamlincoln)"> Favorite </button>
             </div>
         </div>
     </div>
