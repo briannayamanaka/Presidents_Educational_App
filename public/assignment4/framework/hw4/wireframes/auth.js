@@ -25,10 +25,16 @@ window.onload = function () {
         const email = txtEmail.value;
         const password = txtPassword.value;
 
-        emailPop.style.visibility = 'hidden';
-        emailPop.style.display = 'none';                
-        passPop.style.visibility = 'hidden';
-        passPop.style.display = 'none';    
+        //not sure what's trying to be done here, but i added a null check
+        //because the signup button in after_signup.html was broken
+        if(emailPop != null && passPop != null)
+        {
+            emailPop.style.visibility = 'hidden';
+            emailPop.style.display = 'none';
+            passPop.style.visibility = 'hidden';
+            passPop.style.display = 'none';
+        }
+
 
 
         if(email == ""){
