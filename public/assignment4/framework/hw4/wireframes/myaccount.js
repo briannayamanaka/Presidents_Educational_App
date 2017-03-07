@@ -15,6 +15,8 @@ window.onload = function () {
             // this value to authenticate with your backend server, if
             // you have one. Use User.getToken() instead.
         }
+        
+        document.getElementById("welcome-title").innerHTML = "An email to reset your password has been sent to " + email
 
         var auth = firebase.auth();
 
