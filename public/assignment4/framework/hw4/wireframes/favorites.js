@@ -46,8 +46,6 @@ function myFavs(userId){
 		console.log("profile_link: " + newFavPres.profile_link);
 		console.log("image_source: " + newFavPres.image_source);
 		console.log("presidentname: " + newFavPres.presidentname);
-
-		document.getElementById('favBtn').style.zIndex = 0;
 		
 		var div = document.createElement('div');
 		div.className += ('pure-u-1 pure-u-md-1-3');
