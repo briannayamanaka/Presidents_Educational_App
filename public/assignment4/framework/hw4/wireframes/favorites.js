@@ -10,7 +10,7 @@ var app = firebase.initializeApp(config);
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser) {
-    	if(window.location == "file:///Users/TheShire/Google%20Drive/UCSD/Winter%202017/CSE%20134B/cse134/public/assignment4/framework/hw4/wireframes/favorites.html")
+    	if(window.location == "https://cse-134b-b2127.firebaseapp.com/assignment4/framework/hw4/wireframes/favorites.html")
       		myFavs(firebaseUser.uid); //dont call if on presidents
       console.log(firebaseUser.email + " is logged in!" );
     } else {
