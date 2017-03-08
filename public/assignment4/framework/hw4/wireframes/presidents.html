@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
     <link rel="stylesheet" href="presidents.css">
+    <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+
+
     <style>        
         img {
             margin-top: 2em;
@@ -35,6 +38,25 @@
             margin: 0;
         }
     </style>
+    <script>
+        var config = {
+            apiKey: "AIzaSyD9qth9IjpvqZTYou6hce8lTQ1pls7KfJk",
+            authDomain: "cse-134b-b2127.firebaseapp.com",
+            databaseURL: "https://cse-134b-b2127.firebaseio.com",
+            storageBucket: "cse-134b-b2127.appspot.com",
+            messagingSenderId: "298947904638"
+        };
+
+        firebase.initializeApp(config);
+
+        firebase.auth().onAuthStateChanged(firebaseUser => {
+            if(firebaseUser) {
+              console.log(firebaseUser.email + " is logged in!" );
+            } else {
+              console.log('not logged in');
+            }
+        });
+    </script>
 </head>
 
 <body>

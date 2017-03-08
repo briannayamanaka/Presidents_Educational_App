@@ -9,7 +9,16 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
     <link rel="stylesheet" href="../presidents.css">
     <link rel="stylesheet" href="http://icono-49d6.kxcdn.com/icono.min.css">
-
+        <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+    <script src="../favorites.js"></script>
+    <script>
+        var president_alanchester=
+            {
+                profile_link:"alanchesterarthur.html",
+                image_source:"alanchesterarthur.jpg",
+                presidentname:"Alan Chester Arthur"
+            };
+    </script>
     <style>
         body p {
             font-family: Avenir;
@@ -96,6 +105,8 @@
                 <div class="pres-cont pure-u-md-1-3">
                     <p class="description">Info: TODO</p>
                 </div>
+                <button onclick="addFavoritePresident(firebase.auth().currentUser.uid,president_alanchester)"> Favorite </button>
+
                 
             </div>
         </div>
