@@ -19,6 +19,11 @@
             };
     </script>
     <style>
+        button{
+            position: absolute;
+            margin: 20px;
+            width: 6.5em;
+        }
         body p {
             font-family: Avenir;
             font-size: 3em;
@@ -27,32 +32,21 @@
         img {
             box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
             border-radius: 4px;
-/*            padding-top: 10px;*/
         }
         
         .pres-cont {
             padding-left: 10px;
             padding-top: 10px;
-/*            border: 2px solid black;*/
             text-align: center;
-            /*            height: 100%;*/
         }
         .description{
             font-size: 1.5em;
         }
-        #fav{
-            margin-left: 30px;
-            margin-top:30px;
-            position: absolute;
-/*            border: 2px solid black;*/
-
+        #favBtn{
+            z-index: 2; /*front*/
         }
-        #fav:hover{
-            color: red;
-/*            border: 2px solid black;*/
-        }
-        #fav:active{
-            color: red;
+        #unFavBtn{
+            z-index: 1; /*behind*/
         }
     </style>
 </head>
@@ -104,7 +98,8 @@
                 <div class="pres-cont pure-u-md-1-3">
                     <p class="description">Info: TODO</p>
                 </div>
-                <button onclick="addFavoritePresident(firebase.auth().currentUser.uid,president_abrahamlincoln)"> Favorite </button>
+                <button id="favBtn" onclick="addFavoritePresident(firebase.auth().currentUser.uid,president_abrahamlincoln)"> Favorite </button>
+                <button id="unFavBtn" onclick="removeFavoritePresident(firebase.auth().currentUser.uid,president_abrahamlincoln)"> Un-favorite </button>
             </div>
         </div>
     </div>
