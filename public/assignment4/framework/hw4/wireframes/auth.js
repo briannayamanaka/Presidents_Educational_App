@@ -1,7 +1,6 @@
 window.onload = function () {
     // Initialize Firebase
     console.log("hi!");
-    
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyD9qth9IjpvqZTYou6hce8lTQ1pls7KfJk",
@@ -67,8 +66,6 @@ window.onload = function () {
             }
         );
     });
-    
-
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if (firebaseUser) {
             console.log(firebaseUser);
