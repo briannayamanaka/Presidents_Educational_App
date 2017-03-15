@@ -1,88 +1,131 @@
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
 
+}
 #layout {
-    padding: 0;
+padding: 0;
 }
-
 .header {
-    text-align: center;
-    top: auto;
-    margin: 3em auto;
+text-align: center;
+top: auto;
+margin: 3em auto;
 }
-
 .sidebar {
-    background: rgb(61, 79, 93);
-    color: #fff;
+background: rgb(61, 79, 93);
+color: #fff;
 }
-
 .brand-title,
 .brand-tagline {
-    margin: 0;
+margin: 0;
 }
 .brand-title {
-    text-transform: uppercase;
+text-transform: uppercase;
 }
 .brand-tagline {
-    font-weight: 300;
-    color: rgb(176, 202, 219);
+font-weight: 300;
+color: rgb(176, 202, 219);
 }
-
 .nav-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+margin: 0;
+padding: 0;
+list-style: none;
 }
 .nav-item {
-    display: inline-block;
-    *display: inline;
-    zoom: 1;
+display: inline-block;
+*display: inline;
+zoom: 1;
 }
 .nav-item a {
-    background: transparent;
-    border: 2px solid rgb(176, 202, 219);
-    color: #fff;
-    margin-top: 1em;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    font-size: 85%;
+background: transparent;
+border: 2px solid rgb(176, 202, 219);
+color: #fff;
+margin-top: 1em;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+font-size: 85%;
 }
 .nav-item a:hover,
 .nav-item a:focus {
-    border: 2px solid rgb(61, 146, 201);
-    text-decoration: none;
+border: 2px solid rgb(61, 146, 201);
+text-decoration: none;
 }
-.welcome-title{
-    font-family: Avenir;
-    padding-top: 15%;
-}
+/*.welcome-title{
+font-family: Avenir;
+padding-top: 15%;
+}*/
 .welcome-description,.welcome-header{
-    font-family: Avenir;
-    font-size: 1.5em;
+font-family: Avenir;
+font-size: 1.5em;
 
-    
 }
 
 @media (min-width: 48em) {
-    .content {
-        padding-top: 2em;    
-    }
+.content {
+padding-top: 2em;
+}
+.header {
+margin: 80% 2em 0;
+text-align: right;
+}
+.sidebar {
+position: fixed;
+top: 0;
+bottom: 0;
+}
+.footer {
+text-align: center;
+}
+/* Presdient formatting */
+}
+button{
+position: absolute;
+margin: 20px;
+width: 6.5em;
+}
+body p {
+font-family: Avenir;
+font-size: 3em;
+}
+img {
+box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+border-radius: 4px;
+}
+.pres-cont {
+padding-left: 10px;
+padding-top: 10px;
+text-align: center;
+}
+.description{
+font-size: 1.5em;
+}
+#favBtn,#unFavBtn{
+font-family: Avenir;
+color: white;
+/*border-radius: 10px;*/
 
-    .header {
-        margin: 80% 2em 0;
-        text-align: right;
-    }
+border: 2px solid rgb(176, 202, 219);
+color: #fff;
+margin-top: 1em;
+background: rgb(61, 79, 93);
+border-radius: 10px;
+/*width: 10%;*/
+/*text-transform: uppercase;*/
+/*font-size: 65%*/
+}
+#favBtn:hover,
+#favBtn:focus,
+#unFavBtn:hover,
+#unFavBtn:focus {
+border: 2px solid rgb(61, 146, 201);
+text-decoration: none;
+outline: 0;
+}
 
-    .sidebar {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-    }
-
-    .footer {
-        text-align: center;
-    }
+#favBtn{
+z-index: 2; /*front*/
+}
+#unFavBtn{
+z-index: 1; /*behind*/
 }
