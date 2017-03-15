@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presidents</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="presidents.css">
+
+<style>
+
+
+    ol.timeline
+        {
+            position: relative;
+            list-style: none;
+            margin: 0;
+            padding: 0 2%;
+            width: 100%;
+        }
+        /*time line center line*/
+        ol.timeline::before
+        {
+            content: ' ';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: .5%;
+            height: 100%;
+            background: linear-gradient(to bottom,rgba(80,80,80,0) 0,#505050 1%,#505050 92%,rgba(80,80,80,0) 100%);
+        }
+        ol.timeline li
+        {
+            position: relative;
+            display: block;
+            width: calc(50% - 20px);
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        ol.timeline li.timeline-right
+        {
+            margin-left: calc(50% + 25px);
+            text-align: center;
+        }
+        ol.timeline li.timeline-left
+        {
+            text-align: center;
+        }
+        .timeline-entry, .timeline-entry > *
+        {
+            display: inline-block;
+
+        }
+        .timeline-entry-event, .timeline-entry-event > *
+        {
+            display: inline-block;
+
+        }
+        .timeline-entry
+        {
+            position: relative;
+            height: 100%;
+            /*timeline entry color*/
+            background-color: rgba(121, 186, 154, 0.8);
+            padding: 5px;
+            border-radius: 3px;
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+        }
+        .timeline-entry-event
+        {
+            position: relative;
+            height: 100%;
+            /*timeline entry color*/
+            background-color: rgba(61, 79, 93,0.8);
+            padding: 5px;
+            border-radius: 3px;
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+        }
+
+        .timeline-left .timeline-entry::after, .timeline-right .timeline-entry::before,  .timeline-left .timeline-entry-event::after, .timeline-right .timeline-entry-event::before
+        {
+            content: ' ';
+            position: absolute;
+            top: 10px;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            pointer-events: none;
+            border: solid transparent;
+            border-width: 10px;
+        }
+        /*left side arrows */
+        .timeline-left .timeline-entry::after, .timeline-left .timeline-entry-event::after
+        {
+            left: 100%;
+            border-left-color: indigo;
+        }
+        /*right side arrows*/
+        .timeline-right .timeline-entry::before, .timeline-right .timeline-entry-event::before
+        {
+            left: -20px;
+            border-right-color:indigo;
+        }
+        .timeline-title
+        {
+            padding: 0;
+            margin: 0;
+            font-size: 25px;
+            /*president name/event title */
+            font-weight: bold;
+            font-family: Avenir;
+            font-style: italic;
+            color : white;
+        }
+
+        .timeline-title::before
+        {
+            left: -37px;
+            margin-right: -20px;
+            font-family: sans-serif;
+            color : white;
+        }
+        .timeline-left .timeline-title::before
+        {
+            display: none;
+        }
+        .timeline-left .timeline-date::after
+        {
+
+            font-family: sans-serif;
+            color : white;
+        }
+
+        .timeline-date
+        {
+            font-size: 15px;
+            margin-left: 10px;
+            font-family: Avenir;
+            color : white;
+        }
+        .timeline-desc
+        {
+            display: block;
+            margin-top: 10px;
+            color : white;
+            font-family: Avenir;
+            text-align: left;
+            padding: 5px;
+        }
+
+        @media screen and (max-width: 850px)
+        {
+            ol.timeline li
+            {
+                width: 100%;
+                padding-top: 100px;
+            }
+            ol.timeline li.timeline-right
+            {
+                margin-left: 0px;
+            }
+            .timeline-entry, .timeline-entry-event
+            {
+                text-align: center;
+            }
+            .timeline-right .timeline-entry::before,
+            .timeline-left .timeline-entry::after,
+            .timeline-right .timeline-entry-event::before,
+            .timeline-left .timeline-entry-event::after
+            {
+                top: -20px;
+                left: calc(50% - 7px);
+                border-color:transparent;
+                border-bottom-color: blue;
+            }
+            .timeline-entry .timeline-title
+            {
+                display: block;
+            }
+
+            .timeline-entry-event .timeline-title
+            {
+                display: block;
+            }
+
+            .timeline-left .timeline-title::before
+            {
+                display: inline-block;
+            }
+            .timeline-title
+            {
+                position: relative;
+            }
+            .timeline-title::before
+            {
+                position: absolute;
+                left: calc(50% - 7px);
+                top: -40px;
+            }
+        }
+        /* end css paste code here */
+
+    </style>
+
+</head>
+
+<body>
+    <div id="layout" class="pure-g" style = "background-color:grey">
+        <div class="sidebar pure-u-1 pure-u-md-1-4">
+            <div class="header">
+                <h1 class="brand-title">U.S. Presidents</h1>
+                <h2 class="brand-tagline">Learning made fun</h2>
+
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a class="pure-button" href="presidents.html">Presidents</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pure-button pure-button-disabled" href="timeline.html">Timeline</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pure-button" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pure-button" href="favorites.html">My Favorites</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pure-button" href="myaccount.html">My Account</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pure-button" href="login.html">Sign out</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="pure-u-1-4"></div>
+        <div class="pure-u-1 pure-u-md-3-4">
+            <ol class="timeline">
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Donald Trump</div>
+                        <div class="timeline-date">2017-Present</div>
+                        <div class="timeline-desc">Donald trump begins his presidency in early 2017. His first few weeks as president bring about many protests and rallies across the country, regarding his twelve executive orders placed within his first month in office.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Barack Obama</div>
+                        <div class="timeline-date">2009-2017</div>
+                        <div class="timeline-desc">presidency details</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry-event">
+                        <div class="timeline-title">Obama's executive orders</div>
+                        <div class="timeline-date">2009</div>
+                        <div class="timeline-desc">President Obama signed executive orders closing all secret prisons and detention camps run by the CIA, including the infamous Guantanamo Bay prison in Cuba. He also banned coercive interrogation methods.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">George W. Bush</div>
+                        <div class="timeline-date">2001-2009</div>
+                        <div class="timeline-desc">Soon after Bush was elected, the U.S. economy began struggling. The "dot com" bubble occurred and many people had lost their jobs and their savings. However, George would have other issues to deal with during his presidency that would overshadow the economy.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Bill Clinton</div>
+                        <div class="timeline-date">1993-2001</div>
+                        <div class="timeline-desc">When Clinton ran for president, many thought that he had no chance to beat current president George H.W. Bush. However, a third independent candidate ran as well, businessman Ross Perot. This opened the door for Clinton, whose moderate stances on the issues managed to win a number of votes from undecided voters.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">George H. W. Bush</div>
+                        <div class="timeline-date">1989-1993</div>
+                        <div class="timeline-desc">When George Bush took the office of president, the world was undergoing a major change. The Soviet Union was collapsing and with it communism in Eastern Europe. New nations were forming out of the Soviet Union and the United States began to slowly establish relations with them.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry-event">
+                        <div class="timeline-title">1993 Missile Attack</div>
+                        <div class="timeline-date">1993</div>
+                        <div class="timeline-desc">The American missile attack on Iraq was meant to retaliate for an Iraqi plot to assassinate George H.W. Bush during the former president’s visit to Kuwait.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Ronald Reagan</div>
+                        <div class="timeline-date">1981-1989</div>
+                        <div class="timeline-desc">Ronald Reagan's goal as president was to "go down in history as the President who made Americans believe in themselves again". In the years prior to his presidency the United States had experienced high inflation, unemployment, and rapidly rising gas prices. In addition, several American citizens were being held hostage in Iran and they had been there for over a year. Reagan wanted people to feel confident in their own abilities and to not rely on the government to take care of everything.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry-event">
+                        <div class="timeline-title">New Federal Holiday</div>
+                        <div class="timeline-date">1986</div>
+                        <div class="timeline-desc"> Martin Luther King Day is officially observed for the first time as a federal holiday in the United States.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Jimmy Carter</div>
+                        <div class="timeline-date">1977-1981</div>
+                        <div class="timeline-desc">Carter's presidency was marked by escalating economic problems. Inflation and unemployment rose dramatically with many people losing their jobs. Also, the price of gas skyrocketed. There was even a shortage of gas to the point where people would line up for hours at the gas station just to try and get gas for their cars. Carter was able to get some things accomplished, however, including establishing the Department of Energy, creating the Department of Education, pardoning citizens who had avoided fighting in the Vietnam War, and fighting for human rights throughout the world.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Gerald Ford</div>
+                        <div class="timeline-date">1974-1977</div>
+                        <div class="timeline-desc">Ford considered it his job to restore the country's faith in their leaders and the office of president. In this effort he largely succeeded and when President Jimmy Carter took his oath of office, he began his speech with "For myself and for our Nation, I want to thank my predecessor for all he has done to heal our land."</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Richard Nixon</div>
+                        <div class="timeline-date">1969-1974</div>
+                        <div class="timeline-desc">Although Nixon's presidency will forever be marked by the Watergate scandal, there were many other major events and accomplishments during his presidency. They included putting a man on the moon, visiting China, ending U.S. involvement in the Vietnam War, and a treaty with the Soviet Union.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Lyndon B. Johnson</div>
+                        <div class="timeline-date">1963-1969</div>
+                        <div class="timeline-desc">Johnson wanted his presidency to usher in of a new way of life for America. He called it the Great Society where everyone would be treated equally and have equal opportunity. He used his popularity to pass legislation to help fight crime, prevent poverty, protect the voting rights of minorities, improve education, and conserve the environment.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">John F. Kennedy</div>
+                        <div class="timeline-date">1961-1963</div>
+                        <div class="timeline-desc">When Kennedy was elected he gave one of the most stirring inaugural speeches in history. In this speech he said the famous words "Ask not what your country can do for you - ask what you can do for your country." His presidency was marked by major events in the Cold War. These events included the building of the Berlin Wall in Germany by the communists, the Bay of Pigs, and the Cuban Missile Crisis.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry-event">
+                        <div class="timeline-title">Eisenhower enforces integration</div>
+                        <div class="timeline-date">1957</div>
+                        <div class="timeline-desc">Dwight D. Eisenhower sends federal troops to Central High School in Little Rock, Arkansas, to enforce integration of African-descent students.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Dwight D. Eisenhower</div>
+                        <div class="timeline-date">1953-1961</div>
+                        <div class="timeline-desc">Eisenhower was very popular and easily won the 1952 presidential election. Eisenhower's two presidential terms were a time of economic prosperity and relative peace. Some of his accomplishments include the Eisenhower Doctrine, the Interstate Highway System, the Civil Rights Acts, and an end to the Korean War.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry-event">
+                        <div class="timeline-title">World War II</div>
+                        <div class="timeline-date">1939-1945</div>
+                        <div class="timeline-desc">In response to the Japanese attack on Pearl Harbor in 1941, the United States joined the Allied Powers (Britain, France, Russia and China) and fought against (Germany, Italy and Japan).</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Harry S. Truman</div>
+                        <div class="timeline-date">1945-1953</div>
+                        <div class="timeline-desc">President Roosevelt died shortly after being elected for his fourth term and Truman became president. World War II was still raging at the time, but things were looking up for the Allies. Just a few months later the Germans surrendered, but President Truman still had to deal with the Japanese.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Franklin D. Roosevelt</div>
+                        <div class="timeline-date">1933-1945</div>
+                        <div class="timeline-desc">In 1932 the country was in the midst of the Great Depression. People were looking for some new ideas, leadership, and hope. They elected Franklin Roosevelt hoping he had the answers.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry-event">
+                        <div class="timeline-title">National Anthem</div>
+                        <div class="timeline-date">1931</div>
+                        <div class="timeline-desc">The Star-Spangled Banner is adopted as the national anthem of the U.S.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Herbert Hoover</div>
+                        <div class="timeline-date">1929-1933</div>
+                        <div class="timeline-desc">Hoover's presidency and legacy will forever be defined by the stock market crash of 1929 that occurred just a few short months after he took the office. The day is called Black Thursday. With the crash of the stock market, businesses failed, people lost their jobs, and the country entered the worst economic crisis in its history.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Calvin Coolidge</div>
+                        <div class="timeline-date">1872-1933</div>
+                        <div class="timeline-desc">Calvin Coolidge's quiet, but honest personality seemed to be just what the country needed at the time. By cleaning up the scandals and showing support for businesses, the economy thrived. This period of prosperity became known as the "Roaring Twenties". After finishing Harding's term, Coolidge was elected to another term of president. He ran under the slogan "Keep Cool with Coolidge". As president, Coolidge was for small government. He also wanted to keep the country somewhat isolated and did not want to join the League of Nations that formed after World War I. He was for tax cuts, lower government spending, and less aid to struggling farmers.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Warren G. Harding</div>
+                        <div class="timeline-date">1921-1923</div>
+                        <div class="timeline-desc">When Warren G. Harding became president he found he was out of his league. Many of his "friends" that he appointed to his cabinet and administration turned out to be crooks who just wanted to use the government to make money. He realized this later when he said "I have no trouble with my enemies…but my friends, they're the ones who keep me walking the floor at nights!"</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry-event">
+                        <div class="timeline-title">World War I</div>
+                        <div class="timeline-date">1914-1918</div>
+                        <div class="timeline-desc">In 1917, the U.S. entered World War I by declaring war on Germany</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Woodrow Wilson</div>
+                        <div class="timeline-date">1913-1921</div>
+                        <div class="timeline-desc">Wilson became President of the United States in 1913 after defeating both current president William Howard Taft and former president Theodore Roosevelt in the election. He immediately set about putting some of his ideas that he had studied for years as a professor to work in the U.S. government.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">William Howard Taft</div>
+                        <div class="timeline-date">1909-1913</div>
+                    </div>
+                    <div class="timeline-desc">While president, William Taft established a parcel post service that helped stimulate nationwide commerce and trade, passed the sixteenth and seventeenth amendment, helped create the Department of Labor, and added New Mexico and Arizona to the United States.</div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry-event">
+                        <div class="timeline-title">Bureau of Investigation</div>
+                        <div class="timeline-date">1908</div>
+                        <div class="timeline-desc">Eventually known as the FBI, the bureau was a division of the U.S. Dept. of Justice that handled investigating all violations of federal laws.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Theodore Roosevelt</div>
+                        <div class="timeline-date">1901-1909</div>
+                        <div class="timeline-desc">In September of 1901, President McKinley was assassinated and Roosevelt became president. As president, Roosevelt worked hard to improve the quality of life for the average American. He took on large corporations that had formed monopolies or trusts. These trusts enabled companies to keep wages low and prices high. Roosevelt broke up many of these trusts and earned the nickname "the trustbuster".</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">William McKinley</div>
+                        <div class="timeline-date">1897-1901</div>
+                        <div class="timeline-desc">When McKinley became president he focused his efforts on making the United States a world power. Perhaps the most significant event while he was president was the Spanish-American war. After the U.S. battleship Maine was destroyed off the coast of Cuba, the U.S. and Spain went to war. The Spanish-American war was a short war of only a few months as the U.S. quickly destroyed Spain's navy. As a result of the war, the U.S. took control of Cuba, the Philippine Islands, and Puerto Rico.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Glover Cleveland</div>
+                        <div class="timeline-date">1893-1897</div>
+                        <div class="timeline-desc">In an effort to clean up the government, Cleveland vetoed much of the legislation that passed over his desk. He vetoed more than twice as many laws as all the previous presidents before him. He became known as the "Veto President" (this was also President Andrew Johnson's nickname).</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Benjamin Harrison</div>
+                        <div class="timeline-date">1889-1893</div>
+                        <div class="timeline-desc">Harrison signed a large number of appropriation bills for naval expansion, internal improvements, to give subsidiaries for steamship lines. Almost a billion dollars was appropriated by the Congress for the first time except in the Civil War. When the critics spoke of the congress as “the billion dollar Congress”, the Speaker Reed said, “This is a billion dollar country”.
+                            Harrison signed the Sherman Anti-Trust Act, “for the protection of commerce and trade in opposition to the unlawful monopolies and restraints”, the first Federal act that attempted to regulate trust. </div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Grover Cleveland</div>
+                        <div class="timeline-date">1885-1889</div>
+                        <div class="timeline-desc">In an effort to clean up the government, Cleveland vetoed much of the legislation that passed over his desk. He vetoed more than twice as many laws as all the previous presidents before him. He became known as the "Veto President" (this was also President Andrew Johnson's nickname).</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry-event">
+                        <div class="timeline-title">Battle of Wounded Knee</div>
+                        <div class="timeline-date">1890</div>
+                        <div class="timeline-desc">The last major battle between United States troops and Indians in the fight for American expansion and dominance.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Chester A. Arthur</div>
+                        <div class="timeline-date">1881-1885</div>
+                        <div class="timeline-desc">Arthur was nominated by the Republicans for vice president. He got the nomination primarily because of political reasons and as a favor to Arthur's powerful friend, Senator Roscoe Conkling. Arthur had never before held an elected office. His lack of experience made some people nervous, and they hoped that nothing would happen to President Garfield.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry-event">
+                        <div class="timeline-title">Segregation</div>
+                        <div class="timeline-date">1883</div>
+                        <div class="timeline-desc">Racial segregation is legalized based on a decision made in the Civil Rights Cases.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">James A. Garfield</div>
+                        <div class="timeline-date">1881-1881</div>
+                        <div class="timeline-desc">Although Garfield was president for only a short time before he was assassinated, he managed to make a mark while president. He was adamant that political corruption come to an end. He refused to give supporters jobs within his administration just because they had supported his campaign. He thought jobs should go to those most qualified.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Rutherford B. Hayes</div>
+                        <div class="timeline-date">1877-1881</div>
+                        <div class="timeline-desc">Despite having started his presidency under the shadow of fraud, Hayes wanted to improve the government and protect the rights of people of all races. He spent much of his efforts trying to help protect the rights of black citizens in the southern states. Most of his work, however, was blocked by the Democratic majority congress.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Ulysses S. Grant</div>
+                        <div class="timeline-date">1869-1877</div>
+                        <div class="timeline-desc">Grant's popularity soared after the Civil War, and he easily won the presidential election in 1868. He served two terms as president and even ran for a third, which he didn't win. Unfortunately, his presidency was marked by a series of scandals. Many of the people in his administration were crooks who stole from the government. In 1873, financial speculation led to a panic and the stock market crashed. Many people lost their jobs during this time.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Andrew Johnson</div>
+                        <div class="timeline-date">1865-1869</div>
+                        <div class="timeline-desc">Just a month after the inauguration, President Lincoln was assassinated and Johnson became president. This was a big shift in the leadership of the country at a critical time. The Civil War was over, but the healing had just begun and now there was a new leader in place and one that was a southerner at heart.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Abraham Linicoln</div>
+                        <div class="timeline-date">1861-1865</div>
+                        <div class="timeline-desc">Lincoln won the 1860 election and was inaugurated as president in March of 1861. The southern states did not want Lincoln to be president. They did not agree with his policies. Before he was officially in office, they began to secede (leave the country). The first state to leave was South Carolina, but soon six more states followed and together they formed a new country called the Confederacy. This all happened after Lincoln won the election, but before he took the oath of office.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry-event">
+                        <div class="timeline-title">Civil War</div>
+                        <div class="timeline-date">1861-1865</div>
+                        <div class="timeline-desc"> Conflict between the North (the Union) and the South (the Confederacy) over the expansion of slavery into western states led to war between the two American sectors. The Northern states won and the rebellious states returned to "The Union." </div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">James Buchanan</div>
+                        <div class="timeline-date">1857-1861</div>
+                        <div class="timeline-desc">In 1856 Buchanan was nominated by the Democratic Party for president. He was likely chosen because he had been out of the country during the Kansas-Nebraska debate on slavery. As a result, he had not been forced to choose sides on the issue and make enemies.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Franklin Pierce</div>
+                        <div class="timeline-date">1853-1857</div>
+                        <div class="timeline-desc">Pierce is widely considered one of the least effective presidents of the United States. This is largely because he helped reopen the slavery issue with the Kansas-Nebraska Act.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Millard Fillmore</div>
+                        <div class="timeline-date">1850-1853</div>
+                        <div class="timeline-desc">President Taylor and Milliard Fillmore had very different ideas about slavery and how the North vs. South issues should be handled. Taylor was adamant that the Union remain united. He even threatened the South with war. Fillmore, however, wanted peace above all else. He wanted to find a compromise.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Zachary Taylor</div>
+                        <div class="timeline-date">1849-1850</div>
+                        <div class="timeline-desc">Despite having little to do with politics throughout his military career, Taylor ran for president in the 1848 elections. He was nominated by the Whig party. Southerners voted for Taylor because he was a fellow slave owner. Northerners voted for him because he was a war hero.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">James K. Polk</div>
+                        <div class="timeline-date">1845-1849</div>
+                        <div class="timeline-desc">When Polk became president, his main goal was to expand the borders of the United States all the way to the Pacific Ocean. He also wanted to settle border disputes with Great Britain regarding the Oregon Territory. Polk threatened Great Britain with war over the northern boundary to the west. He said that the U.S. wanted the territory all the way to the 54-40 line, just south of Alaska. A popular slogan of the day was "54-40 or fight". Britain later agreed to a border at the 49th parallel, which is today the border between the U.S. and Canada. Polk was happy about this settlement as he never really wanted to go war with Britain.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry-event">
+                        <div class="timeline-title">Mexican War</div>
+                        <div class="timeline-date">1846-1848</div>
+                        <div class="timeline-desc">United States declared war on Mexico to acquire more land and as a result gained California, Nevada, Utah, New Mexico, Arizona, Colorado, and Wyoming.</div>
+                    </div>
+                </li>
+
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">John Tyler</div>
+                        <div class="timeline-date">1841-1845</div>
+                        <div class="timeline-desc">When Tyler became president, he did not fall in line with the Whig party politics. He disagreed with them on several issues. As a result, they kicked him out of the party and all but one of the cabinet members resigned. They even tried to impeach him saying that he misused his veto power. The impeachment failed, however. Tyler was a strong proponent of states' rights. This meant that he thought state governments should have more power and the federal government less power. States should be able to set their own laws without the federal government interfering. His policies regarding states' rights caused a further riff and separation between the northern and southern states. This likely had some influence and helped to cause the Civil War.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">William Henry Harrison</div>
+                        <div class="timeline-date">1841-1841</div>
+                        <div class="timeline-desc">Harrison died 32 days after being inaugurated as president. This is the shortest time anyone has been president. He gave a long (well over an hour!) speech while standing in the cold rain during his inauguration. He didn't wear a coat or wear a hat. He caught a bad cold which turned into pneumonia. He never recovered and died a month later.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Martin Van Buren</div>
+                        <div class="timeline-date">1837-1841</div>
+                        <div class="timeline-desc">Andrew Jackson supported Van Buren for president after deciding not to run for a third term. Van Buren won the election of 1836 becoming the 8th president of the United States. Van Buren's presidency was defined by the Panic of 1837. Just a few short months after he became president, the stock market crashed. The economy ground to a halt as banks failed, people lost their jobs, and companies went out of business. The failure was largely due to policies set forth by his predecessor President Jackson and there was little Martin could do.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Andrew Jackson</div>
+                        <div class="timeline-date">1829-1837</div>
+                        <div class="timeline-desc">After becoming president Jackson assumed more power than any president before him. Some people even gave him the nickname "King Andrew". Some of these changes, like hiring and firing cabinet members, are still used by presidents today. Jackson wanted a small, but strong federal government. He fought against the national bank saying that it helped the rich and hurt the poor. He also insisted that states were required to follow federal laws.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry-event">
+                        <div class="timeline-title">Trail of Tears</div>
+                        <div class="timeline-date">1838</div>
+                        <div class="timeline-desc">In an effort to acquire more land the United States forced more than 15,000 Cherokee Native Americans to march from Georgia to Indian Territory in present-day Oklahoma. Approximately 4,000 died from starvation and disease along the “Trail of Tears.”</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">John Quincy Adams</div>
+                        <div class="timeline-date">1825-1829</div>
+                        <div class="timeline-desc">Adams' presidency was somewhat uneventful. He tried to get a law passed to raise tariffs and help American businesses, but the Southern states were against it. The law never passed. He also tried to set up a national transportation system of roads and canals. However, this too failed in congress.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">James Monroe</div>
+                        <div class="timeline-date">1817-1825</div>
+                        <div class="timeline-desc">During Monroe's presidency five new states were admitted into the country. These included Mississippi, Illinois, Alabama, Maine, and Missouri. Monroe also further added to the expansion of the United States by buying the territory of Florida from Spain.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">James Madison</div>
+                        <div class="timeline-date">1809-1817</div>
+                        <div class="timeline-desc">The main event during Madison's presidency was the War of 1812. This started because France and Britain were at war. Madison did not want to enter the war, but Britain was seizing US trade ships, and he finally felt he had no choice. In 1812 he asked congress to declare war on Britain. Unfortunately, the US was in no position to fight the British and lost many battles, including one where the British marched on Washington DC and burned down the White House. However, the final battle of the war, the Battle of Orleans, was a victory led by General Andrew Jackson. This helped the country to feel they had done well and raised Madison's popularity.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry-event">
+                        <div class="timeline-title">War of 1812</div>
+                        <div class="timeline-date">1812-1814</div>
+                        <div class="timeline-desc">America declared war on Britain due to the British restricting U.S. trade and kidnapping U.S. seamen. </div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">Thomas Jefferson</div>
+                        <div class="timeline-date">1801-1809</div>
+                        <div class="timeline-desc">Jefferson became the third President of the United States on March 4, 1801. One of the first things he did was try to reduce the federal budget, moving power back into the hands of the states. He also lowered taxes, which made him popular to many people.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">John Adams</div>
+                        <div class="timeline-date">1797-1801</div>
+                        <div class="timeline-desc">Adams first served as Vice President under George Washington. He found this job boring and insignificant. However, when Washington stepped down, Adams ran for president and barely won over Thomas Jefferson in 1797. During his presidency, Adams' main accomplishment was keeping the United States out of war with France. France and Great Britain were at war and both wanted help from the US. The American public was divided. Some wanted to support France because France helped the US during the American Revolution. Others wanted to help Great Britain. Although it hurt his popularity at the time, Adams opted for peace and kept the country out of the war.</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry-event">
+                        <div class="timeline-title">Capital declared</div>
+                        <div class="timeline-date">1800</div>
+                        <div class="timeline-desc">The capital of the United States is declared to be Washington, DC</div>
+                    </div>
+                </li>
+                <li class="timeline-right">
+                    <div class="timeline-entry">
+                        <div class="timeline-title">George Washington</div>
+                        <div class="timeline-date">1789-1797</div>
+                        <div class="timeline-desc">The two terms that Washington served as president were peaceful times. During this time, George established many roles and traditions of the President of the United States that still stand today. He helped build and guide the formation of the actual US Government from the words of the Constitution. He formed the first presidential cabinet which included his friends Thomas Jefferson (Secretary of State) and Alexander Hamilton (Secretary of the Treasury). George stepped down from the presidency after 8 years, or two terms. He felt it was important that the president not become powerful or rule too long, like a king. Since then only one president, Franklin D. Roosevelt, has served more than two terms.</div>
+                    </div>
+                </li>
+                <li class="timeline-left">
+                    <div class="timeline-entry-event">
+                        <div class="timeline-title">American Independence</div>
+                        <div class="timeline-date">1783</div>
+                        <div class="timeline-desc">Following the end of American Revolution, Britain formally recognized the United States of American as an independent country.</div>
+                    </div>
+                </li>
+            </ol>
+
+        </div>
+    </div>
+</body>
+
+</html>

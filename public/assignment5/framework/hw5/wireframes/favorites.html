@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presidents</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="presidents.css">
+    <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+<!--     // <script src="https://unpkg.com/vue"></script>
+    // <script src="https://unpkg.com/vuefire/dist/vuefire.js"></script> -->
+    <!-- // <script src="js/app.js"></script> -->
+    <script src="favorites.js"></script>
+
+    <style>
+        html,
+        body {}
+        
+        img {
+            margin-top: 2em;
+            width: 80%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: -1em;
+            box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease-in-out;
+        }
+        
+        img:hover {
+            transform: scale(1.06, 1.06);
+        }
+        
+        p{
+            letter-spacing: 2px;
+            font-size: 1.7em;
+            font-family: Avenir;
+            font-weight: 400;
+            /*font-style:italic;*/
+        }
+        
+        #list section{
+            padding: 0;
+            margin: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="layout" class="pure-g">
+        <div class="sidebar pure-u-1 pure-u-md-1-4">
+            <div class="header">
+                <h1 class="brand-title">U.S. Presidents</h1>
+                <h2 class="brand-tagline">Learning made fun</h2>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a class="pure-button" href="presidents.html">Presidents</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pure-button" href="timeline.html">Timeline</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pure-button" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pure-button pure-button-disabled" href="favorites.html">My Favorites</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pure-button" href="myaccount.html">My Account</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pure-button" href="login.html">Sign out</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="pure-u-1-8 pure-u-md-1-4"></div>
+        <div class="pure-u-3-4">
+            <div id="list" class="pure-g">
+                
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

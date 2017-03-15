@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+        
+        <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+        
+        <script src="auth.js"></script>
+        <title>Presidents Page</title>
+    </head>
+    <style>
+        
+        html, body{
+            text-align: center;
+            font-family: Avenir;
+            color: white;
+            background-color: rgb(61, 79, 93);
+
+        }
+        #test{
+            border-radius: 2px;
+            border:2px solid rgba(255,255,255,0.4);
+            position: absolute;
+            width: 500px;
+            height: 350px;
+            padding-top: 60px;
+            top:0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+        .center{
+            margin-left: 150px;
+            color: black;
+        }
+        fieldset *{
+            padding: 5px;
+        }
+        h1{
+            color:white;
+        }
+        button{
+            margin-top: 10px;
+
+        }
+        .errorPop{
+            position: relative;
+            margin: 0;
+            padding: 0;  
+            color: red; 
+            visibility: hidden;
+            display: none;
+            font-size: 12px;
+            font-style: italic;
+        }
+    </style>
+    <body>
+        <div id="test">
+            <div class="pure-form pure-form-stacked">
+                <fieldset>
+                    <h1 >Login to your account</h1>
+                    <div class="center pure-input-1-3"><input id="email" type="text" placeholder="Username"></div>
+                    <p id="emailPop" class="errorPop">Invalid Email</p>
+                    <div class="center pure-input-1-3"><input id="password" type="password" placeholder="Password"></div>
+                    <p id="passPop" class="errorPop">Invalid Password <br>Must be 6 characters or more</p> 
+                    <button id="submit" class="pure-button pure-button-primary">Sign In</button>
+                </fieldset>
+            </div>
+        </div>
+    </body>
+</html>
