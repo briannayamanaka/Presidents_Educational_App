@@ -14,7 +14,7 @@ var debugURL = "file:///Users/TheShire/Google%20Drive/UCSD/Winter%202017/CSE%201
 firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser) {
     // 	console.log(window.location);
-    if(window.location == debugURL) //only search users database if on my favorites page
+    if(window.location == debugURL || window.location == finalSubmissionURL) //only search users database if on my favorites page
       	myFavs(firebaseUser.uid); //populates users favorites
     else
     	isFav(firebaseUser.uid);
