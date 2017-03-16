@@ -38,7 +38,6 @@ function removeFavoritePresident(userId, president) {
 	document.getElementById('favBtn').style.zIndex = 2;
 	var ref = firebase.database().ref('users/' + userId+ '/listoffavorites');
 	
-
 	ref.once('value',function(snapshot){
 			snapshot.forEach(function(childSnapshot) { //check each fav president if match change fav button
 		    var childKey = childSnapshot.key;
@@ -56,19 +55,17 @@ function removeFavoritePresident(userId, president) {
 }
 function myFavs(userId){
 	var ref = firebase.database().ref('users/' + userId+ '/listoffavorites');
-	
-	ref.on("child_added", function(data, prevChildKey) {
-		var newFavPres = data.val();
-		// console.log("profile_link: " + newFavPres.profile_link);
-		// console.log("image_source: " + newFavPres.image_source);
-		// console.log("presidentname: " + newFavPres.presidentname);
-		
-		var div = document.createElement('div');
-		div.className += ('pure-u-1 pure-u-md-1-3');
-        div.innerHTML += '<section align="center"> <a href="presidentprofiles/' + newFavPres.profile_link + '" > ' +
-        '<img src="pres_images/'+  newFavPres.image_source +'" ' +  'alt="' + newFavPres.presidentname + '">'+ '</a><p>' + newFavPres.presidentname+ '</p></section>';
+	ref.once('value',function(snapshot){
+		snapshot.forEach(function(childSnapshot){ //check each fav president if match change fav button
+		    var newFavPres = childSnapshot.val();
 
-		document.getElementById('list').appendChild(div);
+		    var div = document.createElement('div');
+			div.className += ('pure-u-1 pure-u-md-1-3');
+	        div.innerHTML += '<section align="center"> <a href="presidentprofiles/' + newFavPres.profile_link + '" > ' +
+	        '<img src="pres_images/'+  newFavPres.image_source +'" ' +  'alt="' + newFavPres.presidentname + '">'+ '</a><p>' + newFavPres.presidentname+ '</p></section>';
+
+			document.getElementById('list').appendChild(div);	
+  		});
 	});
 }
 
