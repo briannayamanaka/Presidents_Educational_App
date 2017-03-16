@@ -58,7 +58,6 @@ function myFavs(userId){
 	ref.once('value',function(snapshot){
 		snapshot.forEach(function(childSnapshot){ //check each fav president if match change fav button
 		    var newFavPres = childSnapshot.val();
-
 		    var div = document.createElement('div');
 			div.className += ('pure-u-1 pure-u-md-1-3');
 	        div.innerHTML += '<section align="center"> <a href="presidentprofiles/' + newFavPres.profile_link + '" > ' +
