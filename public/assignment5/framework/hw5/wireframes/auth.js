@@ -46,7 +46,6 @@ window.onload = function () {
             passPop.style.display = 'block';
         }
         
-        console.log("email: " + email + "\npassword: " + password);
         const auth = firebase.auth();
         const promise = auth.signInWithEmailAndPassword(email, password);
 
@@ -61,6 +60,16 @@ window.onload = function () {
                     emailPop.innerHTML = "Invalid Email";
                     emailPop.style.visibility = 'visible';
                     emailPop.style.display = 'block';               
+                }                
+                if(e.code == "auth/wrong-password"){
+                    passPop.innerHTML = "Incorrect Password";
+                    passPop.style.visibility = 'visible';
+                    passPop.style.display = 'block';               
+                }
+                if(e.code == "auth/user-not-found"){
+                    passPop.innerHTML = "Incorrect Username and or Password";
+                    passPop.style.visibility = 'visible';
+                    passPop.style.display = 'block';               
                 }
                 console.log(e.code);
             }

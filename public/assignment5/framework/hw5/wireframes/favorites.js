@@ -6,7 +6,7 @@ var config = {
     messagingSenderId: "298947904638"
 };
 var app = firebase.initializeApp(config);
-var finalSubmissionURL = "https://cse-134b-b2127.firebaseapp.com/assignment4/framework/hw4/wireframes/favorites.html";
+var finalSubmissionURL = "https://cse-134b-b2127.firebaseapp.com/assignment5/framework/hw5/wireframes/favorites.html";
 var debugURL = "file:///Users/TheShire/Google%20Drive/UCSD/Winter%202017/CSE%20134B/cse134/public/assignment5/framework/hw5/wireframes/favorites.html";
 //change debugURL to your URL that is displayed when you click on the my favorites tab
 

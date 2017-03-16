@@ -54,6 +54,11 @@ window.onload = function(){
 			    	emailPop.style.visibility = 'visible';
 			    	emailPop.style.display = 'block';	    		
 		    	}
+		    	if(e.code == "auth/wrong-password"){
+                    passPop.innerHTML = "Incorrect Password";
+                    passPop.style.visibility = 'visible';
+                    passPop.style.display = 'block';               
+                }
 	    		console.log(e.code);
 	    	}
 	    );
