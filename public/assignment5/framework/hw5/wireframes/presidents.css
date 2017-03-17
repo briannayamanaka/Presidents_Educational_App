@@ -20,15 +20,21 @@ color: #fff;
 .brand-tagline {
 margin: 0;
 }
+
 .brand-title {
 text-transform: uppercase;
+font-size: x-large;
+    padding-bottom: 4px;
 }
 .brand-tagline {
+    font-size: medium;
 font-weight: 300;
 color: rgb(176, 202, 219);
+    padding-bottom:20px;
 }
 .nav-list {
 margin: 0;
+margin-top:5%;
 padding: 0;
 list-style: none;
 }
@@ -66,8 +72,11 @@ font-size: 1.5em;
 padding-top: 2em;
 }
 .header {
-margin: 80% 2em 0;
-text-align: right;
+    margin-top: 50%;
+    margin-right: 2em;
+    margin-left: 2em;
+    margin-bottom: 0;
+    text-align: right;
 }
 .sidebar {
 position: fixed;
