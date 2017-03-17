@@ -21,56 +21,53 @@
 </head>
 
 <body>
-    <div id="layout" class="pure-g">
-        <div class="sidebar pure-u-1 pure-u-md-1-4">
-            <div class="header">
-                <h1 class="brand-title">U.S. Presidents</h1>
-                <h2 class="brand-tagline">Learning made fun</h2>
-                <nav class="nav">
-                    <ul class="nav-list">
-                        <li class="nav-item">
-                            <a class="pure-button" href="../presidents.html">Presidents</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="pure-button" href="../timeline.html">Timeline</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="pure-button" href="../gallery.html">Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="pure-button " href="../favorites.html">My Favorites</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="pure-button" href="../login.html">Sign out <button onclick="signOut()" style="display: none;"> invisible </button></a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class="pure-u-1-8 pure-u-md-1-4"></div>
-        <div class="pure-u-3-4">
-            <div class="pure-g">
-                <div class="pres-cont pure-u-md-1-3">
-                    <img class="pure-img" src="../pres_images/ronaldreagan.jpg">
-                </div>
-                <div class="pres-cont pure-u-1 pure-u-md-2-3">
-                    <p>Ronald Reagan</p>
-                    <p class="description">40th President</p>
-                    <p class="description">Term: January 20, 1981 – January 20, 1989</p>
-                </div>
-                <div class="pres-cont pure-u-md-1-3">
-                    <p class="description">Biography: TODO</p>
-                </div>                
-                <div class="pres-cont pure-u-md-2-3">
-                </div>
-                <div class="pres-cont pure-u-md-1-3">
-                    <p class="description">Info: TODO</p>
-                </div>
-                <button id="favBtn" onclick="addFavoritePresident(firebase.auth().currentUser.uid,president)"> Favorite </button>
-                <button id="unFavBtn" onclick="removeFavoritePresident(firebase.auth().currentUser.uid,president)"> Un-favorite </button>
-            </div>
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <div class="header">
+            <h1 class="brand-title">U.S. Presidents</h1>
+            <h2 class="brand-tagline">Learning made fun</h2>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="pure-button" href="../presidents.html">Presidents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="pure-button" href="../timeline.html">Timeline</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="pure-button" href="../gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="pure-button " href="../favorites.html">My Favorites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="pure-button" href="../login.html">Sign out <button onclick="signOut()" style="display: none;"> invisible </button></a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
+    <div class="pure-u-1-8 pure-u-md-1-4"></div>
+    <div class="pure-u-3-4">
+        <div class="pure-g">
+            <div class="pres-cont pure-u-md-1-3">
+                <img class="pure-img" src="../pres_images/ronaldreagan.jpg">
+            </div>
+            <div class="pres-cont pure-u-1 pure-u-md-2-3">
+                <div class="presidentname"><p>Ronald Reagan</p></div>
+                <p class="description">40th President</p>
+                <p class="description">Term: January 20, 1981 – January 20, 1989</p>
+            </div>
+            <div class="pure-u-1">
+                <div class="biodescription">Presidency Details: <br><br> Ronald Reagan's goal as president was to "go down in history as the President who made Americans believe in themselves again". In the years prior to his presidency the United States had experienced high inflation, unemployment, and rapidly rising gas prices. In addition, several American citizens were being held hostage in Iran and they had been there for over a year. Reagan wanted people to feel confident in their own abilities and to not rely on the government to take care of everything.</div>
+            </div>
+            <div class="pres-cont pure-u-md-2-3">
+            </div>
+            <button id="favBtn" onclick="addFavoritePresident(firebase.auth().currentUser.uid,president)"> Favorite </button>
+            <button id="unFavBtn" onclick="removeFavoritePresident(firebase.auth().currentUser.uid,president)"> Un-favorite </button>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>
